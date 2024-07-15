@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:1@localhost:5432/tg_users
+      - TELEGRAM_BOT_TOKEN=7018327138:AAHKhNEUbN7p0nYWTDYymy3Szz6EY1D88LM
+      - SENDER_EMAIL=https://github.com/xurshiddev555
+      - EMAIL_PASSWORD=Xurwid5@
+    ports:
+      - "8000:8000"
+    restart: always
